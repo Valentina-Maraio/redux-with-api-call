@@ -1,7 +1,7 @@
 import './App.css';
 import {Provider} from 'react-redux'
 import configureStore from './store/configureStore';
-import Posts from './components/Posts'
+import Users from './components/Users'
 
 const store = configureStore()
 
@@ -12,7 +12,7 @@ function App() {
     className="App">
       <header className="App-header">
         <h1>Redux with API call</h1>
-        <Posts />
+        <Users />
       </header>
     </Provider>
   );

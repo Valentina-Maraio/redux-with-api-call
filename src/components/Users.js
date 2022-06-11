@@ -1,11 +1,11 @@
 import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {loadPosts} from '../store/post'
+import {loadPosts} from '../store/user'
 import {useEffect} from 'react'
 
-const Posts = () => {
+const Users = () => {
     const dispatch = useDispatch();
-    const posts = useSelector((state) => state.list);
+    const users = useSelector((state) => state.list);
 
     useEffect(() => {
         dispatch(loadPosts());
@@ -13,11 +13,11 @@ const Posts = () => {
 
   return (
     <div>
-        <h1>Posts</h1>
+        <h1>Users</h1>
         <ul>
-            {posts.map((post) => (
-                <li key={post.id}>
-                    {post.title}
+            {users.map((user) => (
+                <li key={user.id}>
+                    {user.name} / {user.phone} 
                 </li>
             ))}
         </ul>
@@ -25,4 +25,4 @@ const Posts = () => {
   )
 }
 
-export default Posts
+export default Users
